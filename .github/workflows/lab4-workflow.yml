@@ -18,5 +18,7 @@ jobs:
           with:
             node-version: '20.x'
             egistry-url: 'https://npm.pkg.github.com/'
-        - name: Install dependencises
-          run: npm install 
+        - run: npm install 
+        - run: npm publish
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
